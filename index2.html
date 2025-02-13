@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="do_you_love_me.css" />
+    <title>DO you love me?</title>
+  </head>
+  <body>
+    <!-- for more code, visit my tiktok account -->
+    <!-- tiktok "meowish" -->
+
+    <div class="question-container container">
+      <div
+        class="tenor-gif-embed"
+        data-postid="25789758"
+        data-share-method="host"
+        data-width="100%">
+        <a href="https://tenor.com/view/tkthao219-bubududu-gif-25789758"
+          >Meh**b suggested Sticker</a
+        >from
+        <a href="https://tenor.com/search/tkthao219-stickers"
+          >Chotu Stickers</a
+        >
+      </div>
+      <script
+        type="text/javascript"
+        async
+        src="https://tenor.com/embed.js"></script>
+
+      <h2 class="question">Do you love me?</h2>
+      <div class="button-container">
+        <button class="yes-btn btn js-yes-btn">Yes</button>
+        <button class="no-btn btn js-no-btn">No</button>
+      </div>
+    </div>
+    <div id="result-container" class="result-container container" style="display: none;">
+      <video class="gif-result" src="cute love gif.mp4" autoplay loop muted type="video/mp4"></video>
+      <h2>I knew it😍!</h2>
+    </div>
+
+    <div id="heart-animation" class="cssload-main" style="display: none;">
+      <div class="cssload-heart">
+        <span class="cssload-heartL"></span>
+        <span class="cssload-heartR"></span>
+        <span class="cssload-square"></span>
+      </div>
+      <div class="cssload-shadow"></div>
+    </div>
+    <script>
+      document.querySelector('.js-yes-btn').addEventListener('click', function() {
+        document.querySelector('.question-container').style.display = 'none';
+        document.getElementById('heart-animation').style.display = 'block';
+        setTimeout(function() {
+          document.getElementById('heart-animation').style.display = 'none';
+          document.getElementById('result-container').style.display = 'block';
+        }, 3000); // Adjust the duration as needed
+      });
+
+      const noBtn = document.querySelector('.js-no-btn');
+
+      function moveButton() {
+        const x = Math.random() * (window.innerWidth - noBtn.clientWidth);
+        const y = Math.random() * (window.innerHeight - noBtn.clientHeight);
+        noBtn.style.position = 'absolute';
+        noBtn.style.left = `${x}px`;
+        noBtn.style.top = `${y}px`;
+      }
+
+      noBtn.addEventListener('mouseover', moveButton);
+      noBtn.addEventListener('touchstart', moveButton);
+    </script>
+    <script src="do_you_love_me.js"></script>
+
+    <footer class="footer">
+      <p>Suggested by Chotu 😉</p>
+    </footer>
+  </body>
+</html>
